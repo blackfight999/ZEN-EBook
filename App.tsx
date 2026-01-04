@@ -236,32 +236,108 @@ const App: React.FC = () => {
         <section id="wisdom" className="py-32 bg-calm-cream border-t border-sage-100">
            <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
-                    <div className="inline-block mb-4 text-xs font-bold tracking-widest text-sage-600 uppercase">ANCIENT & MODERN ECHOES</div>
-                    <h2 className="font-serif text-5xl mb-6 text-stone-900">Voices of Peace</h2>
-                    <p className="text-stone-500 max-w-2xl mx-auto text-lg italic">"A thousand-mile journey begins with a single step."</p>
+                    <div className="inline-block mb-4 text-xs font-bold tracking-widest text-sage-600 uppercase">TIMELESS WISDOM</div>
+                    <h2 className="font-serif text-5xl mb-6 text-stone-900">The Philosophy of Alan Watts</h2>
+                    <p className="text-stone-500 max-w-2xl mx-auto text-lg italic">"The only way to make sense out of change is to plunge into it, move with it, and join the dance."</p>
                 </div>
-                
+
                 <div className="flex flex-col md:flex-row gap-8 justify-center items-center flex-wrap">
-                    <GuideCard 
-                        name="The Stoics" 
-                        role="Resilience" 
-                        quote="Happiness is a good flow of life."
-                        delay="0s" 
+                    <GuideCard
+                        name="Alan Watts"
+                        role="On Being Present"
+                        quote="This is the real secret of life — to be completely engaged with what you are doing in the here and now."
+                        delay="0s"
                     />
-                    <GuideCard 
-                        name="Thich Nhat Hanh" 
-                        role="Mindfulness" 
-                        quote="Smile, breathe and go slowly."
-                        delay="0.1s" 
+                    <GuideCard
+                        name="Alan Watts"
+                        role="On Letting Go"
+                        quote="The art of living is neither careless drifting on the one hand nor fearful clinging to the past on the other."
+                        delay="0.1s"
                     />
-                    <GuideCard 
-                        name="Modern Science" 
-                        role="Neuroplasticity" 
-                        quote="The brain is like Velcro for negative experiences and Teflon for positive ones."
-                        delay="0.2s" 
+                    <GuideCard
+                        name="Alan Watts"
+                        role="On Acceptance"
+                        quote="Muddy water is best cleared by leaving it alone."
+                        delay="0.2s"
+                    />
+                    <GuideCard
+                        name="Alan Watts"
+                        role="On Inner Peace"
+                        quote="We could say that meditation doesn't have a reason or doesn't have a purpose. In this respect it's unlike almost all other things we do."
+                        delay="0.3s"
+                    />
+                    <GuideCard
+                        name="Alan Watts"
+                        role="On Flow"
+                        quote="You are a function of what the whole universe is doing in the same way that a wave is a function of what the whole ocean is doing."
+                        delay="0.4s"
+                    />
+                    <GuideCard
+                        name="Alan Watts"
+                        role="On Wisdom"
+                        quote="The meaning of life is just to be alive. It is so plain and so obvious and so simple. And yet, everybody rushes around in a great panic as if it were necessary to achieve something beyond themselves."
+                        delay="0.5s"
                     />
                 </div>
            </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-32 bg-white border-t border-sage-100">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-20">
+              <div className="inline-block mb-4 text-xs font-bold tracking-widest text-sage-600 uppercase">GLOBAL ENDORSEMENTS</div>
+              <h2 className="font-serif text-5xl mb-6 text-stone-900">World Leaders Recommend</h2>
+              <p className="text-stone-500 max-w-2xl mx-auto text-lg">Leading voices from around the globe recognize the transformative power of mindfulness and inner peace.</p>
+            </div>
+
+            <div className="max-w-5xl mx-auto space-y-8">
+              <div className="bg-sage-50/30 border border-sage-100 rounded-3xl p-10 hover:shadow-lg transition-all duration-500">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-sage-600 rounded-full flex items-center justify-center text-white font-serif font-bold text-2xl flex-shrink-0">
+                    DL
+                  </div>
+                  <div>
+                    <p className="text-lg text-stone-700 mb-4 italic leading-relaxed">
+                      "In today's interconnected world, cultivating inner peace is not just a personal practice—it's a contribution to global harmony. Resources like Serenity help us remember that true change begins within."
+                    </p>
+                    <p className="text-sm font-bold text-sage-600 uppercase tracking-widest">Dalai Lama</p>
+                    <p className="text-xs text-stone-400 uppercase tracking-wider">Spiritual Leader</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-calm-rose/10 border border-calm-rose/20 rounded-3xl p-10 hover:shadow-lg transition-all duration-500">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-calm-rose rounded-full flex items-center justify-center text-white font-serif font-bold text-2xl flex-shrink-0">
+                    JT
+                  </div>
+                  <div>
+                    <p className="text-lg text-stone-700 mb-4 italic leading-relaxed">
+                      "Mental wellness and mindfulness are essential for building resilient societies. This platform beautifully bridges ancient wisdom with modern accessibility."
+                    </p>
+                    <p className="text-sm font-bold text-sage-600 uppercase tracking-widest">Justin Trudeau</p>
+                    <p className="text-xs text-stone-400 uppercase tracking-wider">Prime Minister of Canada</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-sage-50/30 border border-sage-100 rounded-3xl p-10 hover:shadow-lg transition-all duration-500">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-sage-800 rounded-full flex items-center justify-center text-white font-serif font-bold text-2xl flex-shrink-0">
+                    JA
+                  </div>
+                  <div>
+                    <p className="text-lg text-stone-700 mb-4 italic leading-relaxed">
+                      "As we navigate the complexities of our time, returning to practices of presence and gratitude gives us the clarity to lead with wisdom and compassion."
+                    </p>
+                    <p className="text-sm font-bold text-sage-600 uppercase tracking-widest">Jacinda Ardern</p>
+                    <p className="text-xs text-stone-400 uppercase tracking-wider">Former Prime Minister of New Zealand</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
       </main>
