@@ -6,7 +6,8 @@
 import React, { useState, useEffect } from 'react';
 import { HeroScene, SerenityPond } from './components/ZenScene';
 import { BreathingPacer, GratitudeGarden, WisdomQuotes } from './components/Practices';
-import { Leaf, Menu, X, Wind, Heart, Sparkles, Sun } from 'lucide-react';
+import { ZenToolsGrid } from './components/ZenTools';
+import { Leaf, Menu, X, Wind, Heart, Sparkles, Sun, Compass } from 'lucide-react';
 
 const GuideCard = ({ name, role, quote, delay }: { name: string, role: string, quote: string, delay: string }) => {
   return (
@@ -62,9 +63,10 @@ const App: React.FC = () => {
           <div className="hidden md:flex items-center gap-10 text-sm font-medium tracking-widest text-stone-500">
             <a href="#presence" onClick={scrollToSection('presence')} className="hover:text-sage-600 transition-colors uppercase">Presence</a>
             <a href="#practices" onClick={scrollToSection('practices')} className="hover:text-sage-600 transition-colors uppercase">Practices</a>
+            <a href="#zen-tools" onClick={scrollToSection('zen-tools')} className="hover:text-sage-600 transition-colors uppercase">Zen Tools</a>
             <a href="#wisdom" onClick={scrollToSection('wisdom')} className="hover:text-sage-600 transition-colors uppercase">Wisdom</a>
-            <a 
-              href="#start" 
+            <a
+              href="#start"
               onClick={scrollToSection('presence')}
               className="px-6 py-2.5 bg-sage-800 text-white rounded-full hover:bg-sage-700 transition-all shadow-md hover:shadow-lg transform active:scale-95"
             >
@@ -83,6 +85,7 @@ const App: React.FC = () => {
         <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-10 text-2xl font-serif animate-fade-in">
             <a href="#presence" onClick={scrollToSection('presence')} className="hover:text-sage-600 uppercase">Presence</a>
             <a href="#practices" onClick={scrollToSection('practices')} className="hover:text-sage-600 uppercase">Practices</a>
+            <a href="#zen-tools" onClick={scrollToSection('zen-tools')} className="hover:text-sage-600 uppercase">Zen Tools</a>
             <a href="#wisdom" onClick={scrollToSection('wisdom')} className="hover:text-sage-600 uppercase">Wisdom</a>
             <button onClick={() => setMenuOpen(false)} className="px-8 py-4 bg-sage-800 text-white rounded-full shadow-lg">Close</button>
         </div>
@@ -230,6 +233,22 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </div>
+        </section>
+
+        {/* Zen Tools Section */}
+        <section id="zen-tools" className="py-32 bg-sage-50/30 border-y border-sage-100">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-sage-600 text-xs font-bold tracking-widest uppercase rounded-full mb-6 shadow-sm border border-sage-100">
+                <Compass size={16} /> MINDFULNESS TOOLKIT
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl mb-6 text-stone-900">Your Zen Tools</h2>
+              <p className="text-lg text-stone-500 max-w-2xl mx-auto">
+                A curated collection of mini mindfulness practices. Tap any tool to open it and begin your micro-meditation — no experience needed.
+              </p>
+            </div>
+            <ZenToolsGrid />
+          </div>
         </section>
 
         {/* Guides / Wisdom Section */}
