@@ -2,8 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serenity: The Path to Mindful Happiness</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="theme-color" content="#FDFBF7" />
+    <meta name="description" content="An interactive ebook teaching mindfulness through hands-on exercises, breathing techniques, and guided meditation." />
+    <title>The Path to Mindful Living — Interactive Zen Ebook</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +25,10 @@
                 50: '#f4f7f4',
                 100: '#e7ede7',
                 200: '#d4e2d4',
+                300: '#b8d4b8',
+                400: '#94b894',
                 600: '#7a9e7a',
+                700: '#5e8a5e',
                 800: '#4a5d4a',
               },
               calm: {
@@ -35,17 +42,61 @@
       }
     </script>
     <style>
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 100px;
+      /* Mobile ebook optimizations */
+      html, body, #root {
+        height: 100%;
+        overflow: hidden;
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
       }
       body {
         background-color: #FDFBF7;
         color: #2D3436;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-text-size-adjust: 100%;
       }
       .selection-theme::selection {
         background-color: #d4e2d4;
         color: #4a5d4a;
+      }
+
+      /* Safe area for notch devices */
+      .safe-top {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      /* Smooth scrolling within chapter content */
+      main {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Prevent pull-to-refresh on mobile */
+      body {
+        overscroll-behavior-y: contain;
+      }
+
+      /* Better touch interactions */
+      button, a, [role="button"] {
+        touch-action: manipulation;
+      }
+
+      /* Hide scrollbar but keep scrollability */
+      main::-webkit-scrollbar {
+        display: none;
+      }
+      main {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Tabular numbers for timers */
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
       }
     </style>
   <script type="importmap">
@@ -65,5 +116,6 @@
 </head>
   <body class="selection-theme">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
