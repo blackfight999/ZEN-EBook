@@ -6,7 +6,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform, PanInfo } from 'framer-motion';
 import {
-  ChevronLeft, ChevronRight, BookOpen, List, X, Leaf,
+  ChevronLeft, ChevronRight, BookOpen, List, X, Leaf, Download,
 } from 'lucide-react';
 
 export interface Chapter {
@@ -128,6 +128,28 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
 
   const next = useCallback(() => goTo(page + 1), [goTo, page]);
   const prev = useCallback(() => goTo(page - 1), [goTo, page]);
+  const slugify = useCallback((value: string) => value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, ''), []);
+
+  const downloadChapter = useCallback(() => {
+    const chapter = chapters[page];
+    if (!chapter) return;
+    const contentText = contentRef.current?.innerText?.trim() ?? '';
+    const header = `Chapter ${chapter.number}: ${chapter.title}\n${chapter.subtitle}\n\n`;
+    const ebookText = `${header}${contentText}`;
+    const blob = new Blob([ebookText], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    const safeTitle = slugify(chapter.title || `chapter-${chapter.number}`);
+    link.href = url;
+    link.download = `ebook-${String(chapter.number).padStart(2, '0')}-${safeTitle}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }, [chapters, page, slugify]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -191,6 +213,13 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
           </div>
 
           <div className="flex items-center gap-1">
+            <button
+              onClick={downloadChapter}
+              className="p-2 rounded-full hover:bg-sage-50 text-stone-500 active:bg-sage-100 transition-colors"
+              aria-label="Download current chapter"
+            >
+              <Download size={18} />
+            </button>
             <div className="w-6 h-6 bg-sage-600 rounded-full flex items-center justify-center">
               <Leaf size={12} className="text-white" />
             </div>
