@@ -13,11 +13,11 @@ import {
 
 // ─── MEDITATION TIMER ─────────────────────────────────────────────
 const TIMER_PRESETS = [
-  { label: '1 min', seconds: 60 },
-  { label: '3 min', seconds: 180 },
-  { label: '5 min', seconds: 300 },
-  { label: '10 min', seconds: 600 },
-  { label: '15 min', seconds: 900 },
+  { label: '1 นาที', seconds: 60 },
+  { label: '3 นาที', seconds: 180 },
+  { label: '5 นาที', seconds: 300 },
+  { label: '10 นาที', seconds: 600 },
+  { label: '15 นาที', seconds: 900 },
 ];
 
 export const MeditationTimer: React.FC = () => {
@@ -79,7 +79,7 @@ export const MeditationTimer: React.FC = () => {
           {finished ? (
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="text-center">
               <Check size={32} className="text-sage-600 mx-auto mb-1" />
-              <p className="text-xs text-sage-600 font-bold uppercase tracking-widest">Namaste</p>
+              <p className="text-xs text-sage-600 font-bold uppercase tracking-widest">นมัสเต</p>
             </motion.div>
           ) : (
             <>
@@ -87,7 +87,7 @@ export const MeditationTimer: React.FC = () => {
                 {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
               </span>
               <span className="text-[10px] text-stone-400 uppercase tracking-widest mt-1">
-                {running ? 'Meditating' : 'Ready'}
+                {running ? 'กำลังทำสมาธิ' : 'พร้อม'}
               </span>
             </>
           )}
@@ -127,14 +127,14 @@ export const MeditationTimer: React.FC = () => {
 
 // ─── BODY SCAN GUIDE ──────────────────────────────────────────────
 const BODY_SCAN_STEPS = [
-  { area: 'Crown', instruction: 'Bring gentle awareness to the top of your head. Notice any warmth or tingling.', icon: '🧠' },
-  { area: 'Forehead & Eyes', instruction: 'Soften the muscles of your forehead. Let your eyelids grow heavy and relaxed.', icon: '👁' },
-  { area: 'Jaw & Throat', instruction: 'Unclench your jaw. Allow your tongue to rest gently against the roof of your mouth.', icon: '🫁' },
-  { area: 'Shoulders', instruction: 'Let your shoulders drop away from your ears. Feel the weight releasing downward.', icon: '💪' },
-  { area: 'Chest & Heart', instruction: 'Feel your heartbeat. Let each beat radiate warmth through your chest.', icon: '❤️' },
-  { area: 'Belly', instruction: 'Let your belly be soft. Notice the gentle rise and fall with each breath.', icon: '🌊' },
-  { area: 'Hands', instruction: 'Feel the energy in your palms. Notice any tingling in your fingertips.', icon: '✋' },
-  { area: 'Legs & Feet', instruction: 'Feel the grounding through your legs. Let your feet connect you to the earth.', icon: '🦶' },
+  { area: 'กระหม่อม', instruction: 'ให้ความสนใจอย่างอ่อนโยนไปที่ส่วนบนของศีรษะ สังเกตความอบอุ่นหรือการเสียวซ่า', icon: '🧠' },
+  { area: 'หน้าผากและดวงตา', instruction: 'ผ่อนคลายกล้ามเนื้อหน้าผาก ปล่อยให้เปลือกตาหนักและผ่อนคลาย', icon: '👁' },
+  { area: 'กรามและลำคอ', instruction: 'คลายกราม ปล่อยให้ลิ้นวางเบาๆ บนเพดานปาก', icon: '🫁' },
+  { area: 'ไหล่', instruction: 'ปล่อยไหล่ลงห่างจากหู รู้สึกถึงน้ำหนักที่ปล่อยลงมา', icon: '💪' },
+  { area: 'หน้าอกและหัวใจ', instruction: 'รู้สึกถึงการเต้นของหัวใจ ปล่อยให้แต่ละจังหวะแผ่ความอบอุ่นไปทั่วหน้าอก', icon: '❤️' },
+  { area: 'ท้อง', instruction: 'ปล่อยให้ท้องนิ่ม สังเกตการยกตัวและลดตัวอย่างเบาๆ ตามลมหายใจ', icon: '🌊' },
+  { area: 'มือ', instruction: 'รู้สึกถึงพลังงานในฝ่ามือ สังเกตการเสียวซ่าที่ปลายนิ้ว', icon: '✋' },
+  { area: 'ขาและเท้า', instruction: 'รู้สึกถึงการยึดเหนี่ยวผ่านขา ปล่อยให้เท้าเชื่อมต่อคุณกับพื้นดิน', icon: '🦶' },
 ];
 
 export const BodyScanGuide: React.FC = () => {
@@ -197,7 +197,7 @@ export const BodyScanGuide: React.FC = () => {
             autoPlay ? 'bg-sage-600 text-white' : 'bg-sage-100 text-sage-600 hover:bg-sage-200'
           }`}
         >
-          {autoPlay ? 'Guided' : 'Auto-Guide'}
+          {autoPlay ? 'กำลังนำทาง' : 'นำทางอัตโนมัติ'}
         </button>
         <button
           onClick={() => { setStep(s => Math.min(BODY_SCAN_STEPS.length - 1, s + 1)); setAutoPlay(false); }}
@@ -209,7 +209,7 @@ export const BodyScanGuide: React.FC = () => {
       </div>
 
       <p className="mt-4 text-[10px] text-stone-400 uppercase tracking-widest">
-        {step + 1} of {BODY_SCAN_STEPS.length} regions
+        {step + 1} จาก {BODY_SCAN_STEPS.length} ส่วน
       </p>
     </div>
   );
@@ -217,12 +217,12 @@ export const BodyScanGuide: React.FC = () => {
 
 // ─── MOOD TRACKER ─────────────────────────────────────────────────
 const MOODS = [
-  { emoji: '😌', label: 'Calm', color: 'bg-green-100 border-green-300 text-green-700' },
-  { emoji: '😊', label: 'Happy', color: 'bg-yellow-100 border-yellow-300 text-yellow-700' },
-  { emoji: '😐', label: 'Neutral', color: 'bg-stone-100 border-stone-300 text-stone-700' },
-  { emoji: '😔', label: 'Low', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-  { emoji: '😤', label: 'Tense', color: 'bg-red-100 border-red-300 text-red-700' },
-  { emoji: '🥱', label: 'Tired', color: 'bg-purple-100 border-purple-300 text-purple-700' },
+  { emoji: '😌', label: 'สงบ', color: 'bg-green-100 border-green-300 text-green-700' },
+  { emoji: '😊', label: 'มีความสุข', color: 'bg-yellow-100 border-yellow-300 text-yellow-700' },
+  { emoji: '😐', label: 'เฉยๆ', color: 'bg-stone-100 border-stone-300 text-stone-700' },
+  { emoji: '😔', label: 'เศร้า', color: 'bg-blue-100 border-blue-300 text-blue-700' },
+  { emoji: '😤', label: 'เครียด', color: 'bg-red-100 border-red-300 text-red-700' },
+  { emoji: '🥱', label: 'เหนื่อย', color: 'bg-purple-100 border-purple-300 text-purple-700' },
 ];
 
 interface MoodEntry {
@@ -250,7 +250,7 @@ export const MoodTracker: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="text-sm text-stone-500 mb-4">How are you feeling right now?</p>
+      <p className="text-sm text-stone-500 mb-4">ตอนนี้คุณรู้สึกอย่างไร?</p>
 
       <div className="flex flex-wrap gap-2 justify-center mb-4">
         {MOODS.map(m => (
@@ -273,11 +273,11 @@ export const MoodTracker: React.FC = () => {
             type="text"
             value={note}
             onChange={e => setNote(e.target.value)}
-            placeholder="A brief note (optional)..."
+            placeholder="บันทึกสั้นๆ (ไม่บังคับ)..."
             className="w-full bg-sage-50 rounded-xl px-4 py-2.5 text-sm border-none outline-none focus:ring-2 focus:ring-sage-200 mb-3"
           />
           <button onClick={logMood} className="w-full py-2.5 bg-sage-600 text-white rounded-xl text-sm font-bold hover:bg-sage-700 transition-colors">
-            Log Feeling
+            บันทึกความรู้สึก
           </button>
         </motion.div>
       )}
@@ -309,11 +309,11 @@ export const MoodTracker: React.FC = () => {
 
 // ─── MANTRA COUNTER ───────────────────────────────────────────────
 const MANTRAS = [
-  'Om Mani Padme Hum',
-  'Om Shanti Shanti Shanti',
-  'So Hum (I Am That)',
-  'Lokah Samastah Sukhino Bhavantu',
-  'Om Namah Shivaya',
+  'โอม มณี ปัทเม ฮุม',
+  'โอม ศานติ ศานติ ศานติ',
+  'โส ฮัม (ฉันคือสิ่งนั้น)',
+  'โลกา สมัสตา สุขิโน ภวันตุ',
+  'โอม นมะ ศิวายะ',
 ];
 
 export const MantraCounter: React.FC = () => {
@@ -334,7 +334,7 @@ export const MantraCounter: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="text-xs text-stone-400 uppercase tracking-widest mb-1">Current Mantra</p>
+      <p className="text-xs text-stone-400 uppercase tracking-widest mb-1">มนตราปัจจุบัน</p>
       <button
         onClick={() => setMantraIndex(i => (i + 1) % MANTRAS.length)}
         className="text-sm font-serif italic text-sage-600 mb-5 hover:text-sage-800 transition-colors cursor-pointer"
@@ -367,7 +367,7 @@ export const MantraCounter: React.FC = () => {
         >
           <Minus size={14} />
         </button>
-        <span className="text-xs text-stone-500 w-20 text-center">Target: {target}</span>
+        <span className="text-xs text-stone-500 w-20 text-center">เป้าหมาย: {target}</span>
         <button
           onClick={() => { setTarget(t => t === 9 ? 27 : t === 27 ? 54 : t === 54 ? 108 : 108); setCount(0); }}
           className="p-1.5 rounded-full bg-stone-100 text-stone-400 hover:bg-stone-200 transition-colors"
@@ -378,8 +378,8 @@ export const MantraCounter: React.FC = () => {
 
       {count >= target && (
         <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="mt-4 text-center">
-          <p className="text-sm font-serif text-sage-600">Cycle Complete</p>
-          <button onClick={() => setCount(0)} className="mt-2 text-xs text-sage-500 underline hover:text-sage-700">Start New Cycle</button>
+          <p className="text-sm font-serif text-sage-600">ครบรอบแล้ว</p>
+          <button onClick={() => setCount(0)} className="mt-2 text-xs text-sage-500 underline hover:text-sage-700">เริ่มรอบใหม่</button>
         </motion.div>
       )}
     </div>
@@ -388,16 +388,16 @@ export const MantraCounter: React.FC = () => {
 
 // ─── AFFIRMATION CARDS ────────────────────────────────────────────
 const AFFIRMATIONS = [
-  { text: 'I am exactly where I need to be in this moment.', theme: 'Presence' },
-  { text: 'I release what I cannot control and embrace what I can.', theme: 'Surrender' },
-  { text: 'My inner peace is unshakeable.', theme: 'Strength' },
-  { text: 'I breathe in calm, I breathe out tension.', theme: 'Breath' },
-  { text: 'I am worthy of rest, of joy, of love.', theme: 'Self-Worth' },
-  { text: 'Each moment is a fresh beginning.', theme: 'Renewal' },
-  { text: 'I choose to respond with grace and patience.', theme: 'Compassion' },
-  { text: 'My thoughts do not define me. I observe them with kindness.', theme: 'Awareness' },
-  { text: 'I am grateful for the life flowing through me right now.', theme: 'Gratitude' },
-  { text: 'I trust the timing of my journey.', theme: 'Trust' },
+  { text: 'ฉันอยู่ตรงที่ที่ควรอยู่ในช่วงเวลานี้', theme: 'การมีสติ' },
+  { text: 'ฉันปล่อยวางสิ่งที่ควบคุมไม่ได้ และโอบรับสิ่งที่ทำได้', theme: 'การยอมรับ' },
+  { text: 'ความสงบภายในของฉันไม่มีสิ่งใดสั่นคลอนได้', theme: 'ความเข้มแข็ง' },
+  { text: 'ฉันหายใจเข้ารับความสงบ หายใจออกปล่อยความตึงเครียด', theme: 'ลมหายใจ' },
+  { text: 'ฉันคู่ควรกับการพักผ่อน ความสุข และความรัก', theme: 'คุณค่าในตัวเอง' },
+  { text: 'ทุกช่วงเวลาคือการเริ่มต้นใหม่', theme: 'การเกิดใหม่' },
+  { text: 'ฉันเลือกที่จะตอบสนองด้วยความสง่างามและความอดทน', theme: 'ความเมตตา' },
+  { text: 'ความคิดไม่ได้กำหนดตัวฉัน ฉันสังเกตมันด้วยความเมตตา', theme: 'การตระหนักรู้' },
+  { text: 'ฉันรู้สึกขอบคุณต่อชีวิตที่ไหลเวียนอยู่ในตัวฉันตอนนี้', theme: 'ความกตัญญู' },
+  { text: 'ฉันไว้วางใจจังหวะเวลาของการเดินทางของฉัน', theme: 'ความไว้วางใจ' },
 ];
 
 export const AffirmationCards: React.FC = () => {
@@ -442,11 +442,11 @@ export const AffirmationCards: React.FC = () => {
 
 // ─── FOCUS / MINDFUL MINUTE ───────────────────────────────────────
 const FOCUS_PROMPTS = [
-  { prompt: 'Name 5 things you can see right now.', sense: 'Sight', icon: Eye },
-  { prompt: 'Listen for 3 different sounds around you.', sense: 'Hearing', icon: Volume2 },
-  { prompt: 'Feel the texture of something near you.', sense: 'Touch', icon: Droplets },
-  { prompt: 'Take one deep breath and notice the scent in the air.', sense: 'Smell', icon: CloudRain },
-  { prompt: 'Notice the taste in your mouth right now.', sense: 'Taste', icon: Flame },
+  { prompt: 'บอกสิ่งที่คุณมองเห็น 5 อย่างตอนนี้', sense: 'การมองเห็น', icon: Eye },
+  { prompt: 'ฟังเสียงรอบตัว 3 เสียงที่แตกต่างกัน', sense: 'การได้ยิน', icon: Volume2 },
+  { prompt: 'สัมผัสพื้นผิวของสิ่งที่อยู่ใกล้ตัว', sense: 'การสัมผัส', icon: Droplets },
+  { prompt: 'หายใจลึกหนึ่งครั้งและสังเกตกลิ่นในอากาศ', sense: 'การดมกลิ่น', icon: CloudRain },
+  { prompt: 'สังเกตรสชาติในปากของคุณตอนนี้', sense: 'การรับรส', icon: Flame },
 ];
 
 export const MindfulMinute: React.FC = () => {
@@ -496,9 +496,9 @@ export const MindfulMinute: React.FC = () => {
           <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mb-4">
             <Check size={28} className="text-sage-600" />
           </div>
-          <h4 className="font-serif text-xl text-stone-900 mb-2">Minute Complete</h4>
-          <p className="text-sm text-stone-500 mb-4">You just gifted yourself presence.</p>
-          <button onClick={reset} className="text-xs text-sage-600 underline hover:text-sage-800">Go Again</button>
+          <h4 className="font-serif text-xl text-stone-900 mb-2">ครบหนึ่งนาทีแล้ว</h4>
+          <p className="text-sm text-stone-500 mb-4">คุณเพิ่งมอบการมีสติให้ตัวเอง</p>
+          <button onClick={reset} className="text-xs text-sage-600 underline hover:text-sage-800">ทำอีกครั้ง</button>
         </motion.div>
       ) : active ? (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center">
@@ -523,19 +523,19 @@ export const MindfulMinute: React.FC = () => {
                 animate={{ width: `${((60 - secondsLeft) / 60) * 100}%` }}
               />
             </div>
-            <span className="text-xs tabular-nums">{secondsLeft}s</span>
+            <span className="text-xs tabular-nums">{secondsLeft} วิ</span>
           </div>
         </motion.div>
       ) : (
         <div className="flex flex-col items-center">
           <p className="text-sm text-stone-500 mb-5 max-w-xs">
-            A grounding exercise that walks you through your senses in 60 seconds.
+            แบบฝึกหัดการยึดเหนี่ยวที่พาคุณผ่านประสาทสัมผัสทั้งห้าใน 60 วินาที
           </p>
           <button
             onClick={() => { setActive(true); setSecondsLeft(60); setPromptIndex(0); }}
             className="px-6 py-3 bg-sage-600 text-white rounded-full text-sm font-bold hover:bg-sage-700 transition-colors shadow-lg flex items-center gap-2"
           >
-            <Play size={16} /> Begin Mindful Minute
+            <Play size={16} /> เริ่มหนึ่งนาทีแห่งสติ
           </button>
         </div>
       )}
@@ -545,11 +545,11 @@ export const MindfulMinute: React.FC = () => {
 
 // ─── SLEEP WIND-DOWN ──────────────────────────────────────────────
 const WIND_DOWN_STEPS = [
-  { title: 'Dim the Lights', desc: 'Lower screen brightness. Soften external lights. Signal to your body that rest is coming.', icon: Moon },
-  { title: 'Release Tension', desc: 'Starting from your toes, tense each muscle group for 5 seconds, then release completely.', icon: Flame },
-  { title: '4-7-8 Breath', desc: 'Inhale for 4 counts, hold for 7, exhale slowly for 8. Repeat 3 times.', icon: Droplets },
-  { title: 'Gratitude Scan', desc: 'Think of 3 moments from today that made you smile, however small.', icon: Sparkles },
-  { title: 'Body Melt', desc: 'Imagine your body slowly melting into the bed, becoming heavier and warmer with each breath.', icon: Mountain },
+  { title: 'หรี่ไฟ', desc: 'ลดความสว่างหน้าจอ ลดแสงภายนอก ส่งสัญญาณให้ร่างกายว่าถึงเวลาพักผ่อน', icon: Moon },
+  { title: 'ปล่อยความตึงเครียด', desc: 'เริ่มจากนิ้วเท้า เกร็งกล้ามเนื้อแต่ละกลุ่ม 5 วินาที แล้วคลายอย่างสิ้นเชิง', icon: Flame },
+  { title: 'หายใจ 4-7-8', desc: 'หายใจเข้า 4 จังหวะ กลั้น 7 จังหวะ หายใจออกช้าๆ 8 จังหวะ ทำซ้ำ 3 ครั้ง', icon: Droplets },
+  { title: 'สแกนความกตัญญู', desc: 'นึกถึง 3 ช่วงเวลาจากวันนี้ที่ทำให้คุณยิ้ม ไม่ว่าจะเล็กน้อยแค่ไหน', icon: Sparkles },
+  { title: 'ร่างกายละลาย', desc: 'จินตนาการว่าร่างกายค่อยๆ ละลายลงบนเตียง หนักขึ้นและอุ่นขึ้นตามลมหายใจแต่ละครั้ง', icon: Mountain },
 ];
 
 export const SleepWindDown: React.FC = () => {
@@ -616,12 +616,12 @@ export const SleepWindDown: React.FC = () => {
             : 'bg-sage-600 text-white hover:bg-sage-700 shadow-lg'
         }`}
       >
-        {checked.has(currentStep) ? 'Completed' : 'Done — Next Step'}
+        {checked.has(currentStep) ? 'เสร็จแล้ว' : 'เสร็จ — ขั้นต่อไป'}
       </button>
 
       {checked.size === WIND_DOWN_STEPS.length && (
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-5 text-sm font-serif italic text-sage-600">
-          You are ready for deep, restorative rest. Goodnight.
+          คุณพร้อมสำหรับการพักผ่อนอย่างลึกซึ้งแล้ว ราตรีสวัสดิ์
         </motion.p>
       )}
     </div>
@@ -630,10 +630,10 @@ export const SleepWindDown: React.FC = () => {
 
 // ─── FOCUS SOUND VISUALIZER ───────────────────────────────────────
 const SOUNDSCAPES = [
-  { name: 'Rain', icon: CloudRain, color: 'from-blue-100 to-blue-50' },
-  { name: 'Ocean', icon: Droplets, color: 'from-cyan-100 to-cyan-50' },
-  { name: 'Forest', icon: Mountain, color: 'from-green-100 to-green-50' },
-  { name: 'Fire', icon: Flame, color: 'from-orange-100 to-orange-50' },
+  { name: 'ฝน', icon: CloudRain, color: 'from-blue-100 to-blue-50' },
+  { name: 'มหาสมุทร', icon: Droplets, color: 'from-cyan-100 to-cyan-50' },
+  { name: 'ป่า', icon: Mountain, color: 'from-green-100 to-green-50' },
+  { name: 'ไฟ', icon: Flame, color: 'from-orange-100 to-orange-50' },
 ];
 
 export const SoundScapeSelector: React.FC = () => {
@@ -650,7 +650,7 @@ export const SoundScapeSelector: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="text-sm text-stone-500 mb-5">Choose an ambient soundscape to focus with.</p>
+      <p className="text-sm text-stone-500 mb-5">เลือกเสียงบรรยากาศเพื่อโฟกัส</p>
 
       <div className="grid grid-cols-2 gap-3 mb-6 w-full max-w-xs">
         {SOUNDSCAPES.map(s => {
@@ -687,7 +687,7 @@ export const SoundScapeSelector: React.FC = () => {
       </div>
 
       <p className="mt-3 text-[10px] text-stone-400 uppercase tracking-widest">
-        {active ? `Playing — ${active}` : 'Select to begin'}
+        {active ? `กำลังเล่น — ${active}` : 'เลือกเพื่อเริ่มต้น'}
       </p>
     </div>
   );
@@ -720,7 +720,7 @@ export const IntentionSetter: React.FC = () => {
           >
             <Sparkles size={28} className="text-sage-600" />
           </motion.div>
-          <p className="text-[10px] uppercase tracking-[0.3em] text-sage-500 font-bold mb-3">Your Intention</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-sage-500 font-bold mb-3">ความตั้งใจของคุณ</p>
           <p className="font-serif text-xl text-stone-800 italic leading-relaxed max-w-xs mb-5">
             "{savedIntention}"
           </p>
@@ -728,20 +728,20 @@ export const IntentionSetter: React.FC = () => {
             onClick={() => setSavedIntention(null)}
             className="text-xs text-stone-400 hover:text-sage-600 transition-colors flex items-center gap-1"
           >
-            <RotateCcw size={12} /> Set New Intention
+            <RotateCcw size={12} /> ตั้งความตั้งใจใหม่
           </button>
         </motion.div>
       ) : (
         <div className="w-full max-w-xs">
           <p className="text-sm text-stone-500 mb-4">
-            Set a conscious intention for this moment, hour, or day.
+            ตั้งความตั้งใจอย่างมีสติสำหรับช่วงเวลานี้ ชั่วโมงนี้ หรือวันนี้
           </p>
           <form onSubmit={setIt} className="flex flex-col gap-3">
             <input
               type="text"
               value={intention}
               onChange={e => setIntention(e.target.value)}
-              placeholder="Today I intend to..."
+              placeholder="วันนี้ฉันตั้งใจจะ..."
               className="w-full bg-sage-50 rounded-xl px-4 py-3 text-sm border-none outline-none focus:ring-2 focus:ring-sage-200"
             />
             <button
@@ -749,7 +749,7 @@ export const IntentionSetter: React.FC = () => {
               disabled={!intention.trim()}
               className="py-2.5 bg-sage-600 text-white rounded-xl text-sm font-bold hover:bg-sage-700 disabled:opacity-40 transition-all"
             >
-              Set Intention
+              ตั้งความตั้งใจ
             </button>
           </form>
         </div>
@@ -760,15 +760,15 @@ export const IntentionSetter: React.FC = () => {
 
 // ─── ZEN TOOLS GRID (Main Export) ─────────────────────────────────
 const TOOLS = [
-  { id: 'timer', name: 'Meditation Timer', desc: 'Timed silent meditation', icon: Timer, component: MeditationTimer },
-  { id: 'bodyscan', name: 'Body Scan', desc: 'Guided body awareness', icon: Brain, component: BodyScanGuide },
-  { id: 'mood', name: 'Mood Check-In', desc: 'Track how you feel', icon: Smile, component: MoodTracker },
-  { id: 'mantra', name: 'Mantra Counter', desc: 'Digital mala beads', icon: Hash, component: MantraCounter },
-  { id: 'affirmation', name: 'Affirmations', desc: 'Positive reminders', icon: Sparkles, component: AffirmationCards },
-  { id: 'mindful', name: 'Mindful Minute', desc: '60-second grounding', icon: Eye, component: MindfulMinute },
-  { id: 'sleep', name: 'Sleep Wind-Down', desc: 'Pre-sleep ritual', icon: Moon, component: SleepWindDown },
-  { id: 'sound', name: 'Soundscapes', desc: 'Ambient focus sounds', icon: Volume2, component: SoundScapeSelector },
-  { id: 'intention', name: 'Set Intention', desc: 'Daily purpose setting', icon: Flame, component: IntentionSetter },
+  { id: 'timer', name: 'ตั้งเวลาสมาธิ', desc: 'สมาธิแบบเงียบจับเวลา', icon: Timer, component: MeditationTimer },
+  { id: 'bodyscan', name: 'สแกนร่างกาย', desc: 'การตระหนักรู้ทางกายมีผู้นำ', icon: Brain, component: BodyScanGuide },
+  { id: 'mood', name: 'สำรวจอารมณ์', desc: 'ติดตามความรู้สึก', icon: Smile, component: MoodTracker },
+  { id: 'mantra', name: 'นับมนตรา', desc: 'ลูกประคำมาลาดิจิทัล', icon: Hash, component: MantraCounter },
+  { id: 'affirmation', name: 'คำยืนยัน', desc: 'คำเตือนใจเชิงบวก', icon: Sparkles, component: AffirmationCards },
+  { id: 'mindful', name: 'หนึ่งนาทีแห่งสติ', desc: 'การยึดเหนี่ยว 60 วินาที', icon: Eye, component: MindfulMinute },
+  { id: 'sleep', name: 'คลายตัวก่อนนอน', desc: 'พิธีกรรมก่อนนอน', icon: Moon, component: SleepWindDown },
+  { id: 'sound', name: 'เสียงบรรยากาศ', desc: 'เสียงเพื่อสมาธิ', icon: Volume2, component: SoundScapeSelector },
+  { id: 'intention', name: 'ตั้งความตั้งใจ', desc: 'กำหนดเป้าหมายประจำวัน', icon: Flame, component: IntentionSetter },
 ];
 
 export const ZenToolsGrid: React.FC = () => {

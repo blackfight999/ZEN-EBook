@@ -47,9 +47,9 @@ export const SurfaceCodeDiagram: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-sm border border-stone-200 my-8">
-      <h3 className="font-serif text-xl mb-4 text-stone-800">Interactive: Surface Code Detection</h3>
+      <h3 className="font-serif text-xl mb-4 text-stone-800">โต้ตอบ: การตรวจจับรหัสพื้นผิว</h3>
       <p className="text-sm text-stone-500 mb-6 text-center max-w-md">
-        Click the grey <strong>Data Qubits</strong> to inject errors. Watch the colored <strong>Stabilizers</strong> light up when they detect an odd number of errors.
+        คลิก <strong>คิวบิตข้อมูล</strong> สีเทาเพื่อใส่ข้อผิดพลาด ดู <strong>ตัวตรวจสอบ</strong> สีสว่างขึ้นเมื่อตรวจพบข้อผิดพลาดจำนวนคี่
       </p>
       
       <div className="relative w-64 h-64 bg-[#F5F4F0] rounded-lg border border-stone-200 p-4 flex flex-wrap justify-between content-between relative">
@@ -94,13 +94,13 @@ export const SurfaceCodeDiagram: React.FC = () => {
       </div>
 
       <div className="mt-6 flex items-center gap-4 text-xs font-mono text-stone-500">
-          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-stone-800"></div> Error</div>
-          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-blue-500"></div> Z-Check</div>
-          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-red-500"></div> X-Check</div>
+          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-stone-800"></div> ข้อผิดพลาด</div>
+          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-blue-500"></div> ตรวจ Z</div>
+          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-red-500"></div> ตรวจ X</div>
       </div>
       
       <div className="mt-4 h-6 text-sm font-serif italic text-stone-600">
-        {errors.length === 0 ? "System is stable." : `Detected ${activeStabilizers.length} parity violations.`}
+        {errors.length === 0 ? "ระบบมีเสถียรภาพ" : `ตรวจพบการละเมิดพาริตี ${activeStabilizers.length} รายการ`}
       </div>
     </div>
   );
@@ -119,9 +119,9 @@ export const TransformerDecoderDiagram: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center p-8 bg-[#F5F4F0] rounded-xl border border-stone-200 my-8">
-      <h3 className="font-serif text-xl mb-4 text-stone-900">AlphaQubit Architecture</h3>
+      <h3 className="font-serif text-xl mb-4 text-stone-900">สถาปัตยกรรม AlphaQubit</h3>
       <p className="text-sm text-stone-600 mb-6 text-center max-w-md">
-        The model processes syndrome history using a recurrent transformer, attending to spatial and temporal correlations.
+        โมเดลประมวลผลประวัติซินโดรมโดยใช้ทรานส์ฟอร์เมอร์แบบเวียนซ้ำ โดยให้ความสนใจกับความสัมพันธ์เชิงพื้นที่และเวลา
       </p>
 
       <div className="relative w-full max-w-lg h-56 bg-white rounded-lg shadow-inner overflow-hidden mb-6 border border-stone-200 flex items-center justify-center gap-8 p-4">
@@ -133,7 +133,7 @@ export const TransformerDecoderDiagram: React.FC = () => {
                     {[...Array(9)].map((_, i) => <div key={i} className={`w-2 h-2 rounded-full ${Math.random() > 0.7 ? 'bg-stone-800' : 'bg-stone-300'}`}></div>)}
                 </div>
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Syndrome</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">ซินโดรม</span>
         </div>
 
         {/* Arrows */}
@@ -150,7 +150,7 @@ export const TransformerDecoderDiagram: React.FC = () => {
                     </div>
                 )}
              </div>
-             <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Transformer</span>
+             <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">ทรานส์ฟอร์เมอร์</span>
         </div>
 
         {/* Arrows */}
@@ -165,7 +165,7 @@ export const TransformerDecoderDiagram: React.FC = () => {
                     <span className="text-2xl font-serif text-stone-300">?</span>
                 )}
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Correction</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">การแก้ไข</span>
         </div>
 
       </div>
@@ -207,9 +207,9 @@ export const PerformanceMetricDiagram: React.FC = () => {
     return (
         <div className="flex flex-col md:flex-row gap-8 items-center p-8 bg-stone-900 text-stone-100 rounded-xl my-8 border border-stone-800 shadow-lg">
             <div className="flex-1 min-w-[240px]">
-                <h3 className="font-serif text-xl mb-2 text-nobel-gold">Performance vs Standard</h3>
+                <h3 className="font-serif text-xl mb-2 text-nobel-gold">ประสิทธิภาพเทียบกับมาตรฐาน</h3>
                 <p className="text-stone-400 text-sm mb-4 leading-relaxed">
-                    AlphaQubit consistently achieves lower logical error rates (LER) than the standard Minimum-Weight Perfect Matching (MWPM) decoder.
+                    AlphaQubit บรรลุอัตราข้อผิดพลาดเชิงตรรกะ (LER) ที่ต่ำกว่าตัวถอดรหัส Minimum-Weight Perfect Matching (MWPM) มาตรฐานอย่างสม่ำเสมอ
                 </p>
                 <div className="flex gap-2 mt-6">
                     {[3, 5, 11].map((d) => (
@@ -218,13 +218,13 @@ export const PerformanceMetricDiagram: React.FC = () => {
                             onClick={() => setDistance(d as any)} 
                             className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 border ${distance === d ? 'bg-nobel-gold text-stone-900 border-nobel-gold' : 'bg-transparent text-stone-400 border-stone-700 hover:border-stone-500 hover:text-stone-200'}`}
                         >
-                            Distance {d}
+                            ระยะ {d}
                         </button>
                     ))}
                 </div>
                 <div className="mt-6 font-mono text-xs text-stone-500 flex items-center gap-2">
                     <BarChart2 size={14} className="text-nobel-gold" /> 
-                    <span>LOGICAL ERROR RATE (LOWER IS BETTER)</span>
+                    <span>อัตราข้อผิดพลาดเชิงตรรกะ (ยิ่งต่ำยิ่งดี)</span>
                 </div>
             </div>
             
@@ -248,7 +248,7 @@ export const PerformanceMetricDiagram: React.FC = () => {
                             transition={{ type: "spring", stiffness: 80, damping: 15 }}
                         />
                     </div>
-                    <div className="h-6 flex items-center text-xs font-bold text-stone-500 uppercase tracking-wider">Standard</div>
+                    <div className="h-6 flex items-center text-xs font-bold text-stone-500 uppercase tracking-wider">มาตรฐาน</div>
                 </div>
 
                 {/* AlphaQubit Bar */}

@@ -39,23 +39,33 @@ export const BreathingPacer: React.FC = () => {
 
   const getMessage = () => {
     switch (phase) {
-      case 'Inhale': return 'Gently breathe in...';
-      case 'Hold': return 'Wait and feel...';
-      case 'Exhale': return 'Softly release...';
-      case 'Wait': return 'Stay empty...';
+      case 'Inhale': return 'หายใจเข้าเบาๆ...';
+      case 'Hold': return 'กลั้นและรู้สึก...';
+      case 'Exhale': return 'ปล่อยลมหายใจช้าๆ...';
+      case 'Wait': return 'อยู่ในความว่าง...';
+    }
+  };
+
+  const getPhaseLabel = (p: string) => {
+    switch (p) {
+      case 'Inhale': return 'หายใจเข้า';
+      case 'Hold': return 'กลั้น';
+      case 'Exhale': return 'หายใจออก';
+      case 'Wait': return 'รอ';
+      default: return p;
     }
   };
 
   return (
     <div className="flex flex-col items-center justify-center p-12 bg-white rounded-full shadow-2xl border border-sage-100 w-[400px] h-[400px] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tr from-sage-50 to-transparent opacity-50"></div>
-      
+
       <motion.div
         className="w-48 h-48 bg-sage-200 rounded-full flex items-center justify-center relative z-10"
         animate={{ scale: getScale() }}
         transition={{ duration: 0.05 }}
       >
-        <motion.div 
+        <motion.div
           className="w-full h-full bg-sage-600/20 rounded-full absolute inset-0 blur-xl"
           animate={{ opacity: [0.2, 0.4, 0.2] }}
           transition={{ repeat: Infinity, duration: 4 }}
@@ -68,7 +78,7 @@ export const BreathingPacer: React.FC = () => {
           {getMessage()}
         </h3>
         <p className="text-xs uppercase tracking-[0.2em] font-bold text-sage-400">
-          BOX BREATHING TECHNIQUE
+          เทคนิคหายใจแบบกล่อง
         </p>
       </div>
 
@@ -84,7 +94,7 @@ export const BreathingPacer: React.FC = () => {
 // --- GRATITUDE GARDEN ---
 export const GratitudeGarden: React.FC = () => {
   const [input, setInput] = useState('');
-  const [seeds, setSeeds] = useState<string[]>(["Warm sunlight", "Fresh morning air", "Family smiles"]);
+  const [seeds, setSeeds] = useState<string[]>(["แสงแดดอุ่นๆ", "อากาศยามเช้าสดชื่น", "รอยยิ้มของครอบครัว"]);
 
   const plantSeed = (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,14 +106,14 @@ export const GratitudeGarden: React.FC = () => {
 
   return (
     <div className="bg-white p-10 rounded-3xl border border-sage-100 shadow-xl max-w-md mx-auto">
-      <h3 className="font-serif text-2xl mb-6 text-stone-900 text-center">Your Daily Garden</h3>
-      
+      <h3 className="font-serif text-2xl mb-6 text-stone-900 text-center">สวนประจำวันของคุณ</h3>
+
       <form onSubmit={plantSeed} className="flex gap-2 mb-8">
-        <input 
-          type="text" 
+        <input
+          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="I am thankful for..."
+          placeholder="ฉันรู้สึกขอบคุณสำหรับ..."
           className="flex-1 bg-sage-50 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-sage-200 outline-none transition-all"
         />
         <button className="p-3 bg-sage-600 text-white rounded-xl hover:bg-sage-700 transition-colors shadow-lg">
@@ -129,7 +139,7 @@ export const GratitudeGarden: React.FC = () => {
       </div>
 
       <p className="mt-8 text-center text-[10px] text-stone-400 uppercase tracking-widest font-bold">
-        Planting seeds of happiness
+        หว่านเมล็ดแห่งความสุข
       </p>
     </div>
   );
@@ -137,11 +147,11 @@ export const GratitudeGarden: React.FC = () => {
 
 // --- WISDOM QUOTES ---
 const QUOTES = [
-  "Happiness is not something readymade. It comes from your own actions.",
-  "Be where you are; otherwise you will miss your life.",
-  "The present moment is the only time over which we have dominion.",
-  "Your mind is a garden. Your thoughts are the seeds.",
-  "What we focus on, we empower and enlarge."
+  "ความสุขไม่ใช่สิ่งสำเร็จรูป มันมาจากการกระทำของคุณเอง",
+  "จงอยู่ตรงที่คุณอยู่ มิฉะนั้นคุณจะพลาดชีวิตของคุณ",
+  "ช่วงเวลาปัจจุบันคือเวลาเดียวที่เราสามารถควบคุมได้",
+  "จิตใจของคุณคือสวน ความคิดของคุณคือเมล็ดพันธุ์",
+  "สิ่งที่เราให้ความสนใจ เราให้พลังและขยายมัน"
 ];
 
 export const WisdomQuotes: React.FC = () => {
@@ -154,7 +164,7 @@ export const WisdomQuotes: React.FC = () => {
       <Quote size={24} className="text-sage-400 mb-6" />
       <div className="h-24 flex items-center justify-center">
         <AnimatePresence mode="wait">
-          <motion.p 
+          <motion.p
             key={index}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -165,11 +175,11 @@ export const WisdomQuotes: React.FC = () => {
           </motion.p>
         </AnimatePresence>
       </div>
-      <button 
+      <button
         onClick={next}
         className="mt-8 flex items-center gap-2 text-xs font-bold tracking-widest text-sage-400 hover:text-white transition-colors"
       >
-        <RefreshCw size={14} /> NEW REFLECTION
+        <RefreshCw size={14} /> คำคมใหม่
       </button>
     </div>
   );
