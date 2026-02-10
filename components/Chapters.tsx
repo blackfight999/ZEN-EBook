@@ -32,7 +32,7 @@ const ChapterHeader: React.FC<{
       {icon}
     </div>
     <p className="text-[10px] uppercase tracking-[0.4em] text-sage-500 font-bold mb-3">
-      Chapter {String(number).padStart(2, '0')}
+      บทที่ {String(number).padStart(2, '0')}
     </p>
     <h1 className="font-serif text-3xl leading-tight text-stone-900 mb-3">{title}</h1>
     <p className="text-sm text-stone-400 italic">{subtitle}</p>
@@ -81,7 +81,7 @@ const Insight: React.FC<{ icon: React.ReactNode; title: string; text: string }> 
   </div>
 );
 
-const PageEnd: React.FC<{ hint?: string }> = ({ hint = 'Swipe or tap to continue' }) => (
+const PageEnd: React.FC<{ hint?: string }> = ({ hint = 'ปัดหรือแตะเพื่ออ่านต่อ' }) => (
   <div className="mt-12 mb-4 text-center">
     <div className="w-8 h-[2px] bg-sage-200 mx-auto mb-4" />
     <p className="text-[10px] uppercase tracking-[0.3em] text-stone-300 font-bold flex items-center justify-center gap-2">
@@ -97,50 +97,50 @@ const Chapter1 = () => (
       <div className="w-20 h-20 bg-sage-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
         <Leaf size={32} className="text-white" />
       </div>
-      <p className="text-[10px] uppercase tracking-[0.4em] text-sage-500 font-bold mb-4">An Interactive Ebook</p>
+      <p className="text-[10px] uppercase tracking-[0.4em] text-sage-500 font-bold mb-4">อีบุ๊กเชิงโต้ตอบ</p>
       <h1 className="font-serif text-4xl leading-[1.15] text-stone-900 mb-4">
-        The Path to<br /><span className="italic text-sage-600">Mindful Living</span>
+        เส้นทางสู่<br /><span className="italic text-sage-600">การใช้ชีวิตอย่างมีสติ</span>
       </h1>
       <div className="w-12 h-[2px] bg-sage-200 mx-auto mt-6 mb-6" />
-      <p className="text-sm text-stone-400 italic px-4">A pocket guide to stillness, presence, and inner peace</p>
+      <p className="text-sm text-stone-400 italic px-4">คู่มือพกพาสู่ความสงบ การมีสติ และความสุขภายใน</p>
     </div>
 
     <Paragraph>
-      Welcome, dear reader. You are holding in your hands a guide designed not just to be read, but to be experienced. Each chapter introduces a mindfulness concept and invites you to practice it immediately.
+      ยินดีต้อนรับ ผู้อ่านที่รัก คุณกำลังถือคู่มือที่ออกแบบมาไม่เพียงแค่ให้อ่าน แต่ให้สัมผัสและลงมือปฏิบัติ แต่ละบทจะแนะนำแนวคิดเรื่องสติ และเชิญชวนให้คุณฝึกฝนทันที
     </Paragraph>
 
     <Paragraph>
-      There is no rush. You can read one chapter a day, or explore them all in one sitting. The only rule is: be fully here for whatever you do.
+      ไม่ต้องรีบ คุณสามารถอ่านวันละบท หรือสำรวจทั้งหมดในครั้งเดียว กฎเดียวคือ: อยู่กับปัจจุบันอย่างเต็มที่กับสิ่งที่คุณทำ
     </Paragraph>
 
     <PullQuote
-      text="The journey of a thousand miles begins with a single step."
-      author="Lao Tzu"
+      text="การเดินทางหมื่นลี้เริ่มต้นด้วยก้าวเดียว"
+      author="เล่าจื๊อ"
     />
 
-    <SectionLabel>How to Use This Book</SectionLabel>
+    <SectionLabel>วิธีใช้หนังสือเล่มนี้</SectionLabel>
 
     <Insight
       icon={<BookOpen size={18} className="text-sage-600" />}
-      title="Read the Lessons"
-      text="Each chapter opens with a short teaching about a mindfulness practice."
+      title="อ่านบทเรียน"
+      text="แต่ละบทเปิดด้วยคำสอนสั้นๆ เกี่ยวกับการฝึกสติ"
     />
     <Insight
       icon={<Sparkles size={18} className="text-sage-600" />}
-      title="Try the Exercises"
-      text="Interactive tools are woven into each chapter. Tap, breathe, and engage."
+      title="ลองทำแบบฝึกหัด"
+      text="เครื่องมือเชิงโต้ตอบถูกสอดแทรกในแต่ละบท แตะ หายใจ และมีส่วนร่วม"
     />
     <Insight
       icon={<Heart size={18} className="text-sage-600" />}
-      title="Carry It With You"
-      text="The final chapter gives you all tools in one place for daily use."
+      title="นำติดตัวไป"
+      text="บทสุดท้ายรวบรวมเครื่องมือทั้งหมดไว้ในที่เดียวเพื่อใช้ในชีวิตประจำวัน"
     />
 
-    <InteractiveBox label="Your First Practice: Set an Intention">
+    <InteractiveBox label="แบบฝึกหัดแรก: ตั้งความตั้งใจ">
       <IntentionSetter />
     </InteractiveBox>
 
-    <PageEnd hint="Begin your journey" />
+    <PageEnd hint="เริ่มต้นเดินทาง" />
   </div>
 );
 
@@ -149,52 +149,52 @@ const Chapter2 = () => (
   <div>
     <ChapterHeader
       number={2}
-      title="Being Here"
-      subtitle="The power of the present moment"
+      title="อยู่กับปัจจุบัน"
+      subtitle="พลังของช่วงเวลาปัจจุบัน"
       icon={<Sun size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">T</span>he present moment is the only time that truly exists. The past is a memory. The future is imagination. Right now is where life happens.
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">ช</span>่วงเวลาปัจจุบันคือเวลาเดียวที่มีอยู่จริง อดีตคือความทรงจำ อนาคตคือจินตนาการ ตอนนี้คือที่ที่ชีวิตเกิดขึ้น
     </Paragraph>
 
     <Paragraph>
-      Yet most of us spend our days time-traveling. We replay yesterday's mistakes or rehearse tomorrow's worries. Mindfulness is the gentle art of returning to now.
+      แต่พวกเราส่วนใหญ่ใช้เวลาเดินทางข้ามเวลา เราเล่นซ้ำความผิดพลาดเมื่อวาน หรือซ้อมความกังวลของพรุ่งนี้ สติคือศิลปะแห่งการกลับมาสู่ปัจจุบันอย่างอ่อนโยน
     </Paragraph>
 
     <PullQuote
-      text="Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present."
-      author="Bil Keane"
+      text="เมื่อวานคือประวัติศาสตร์ พรุ่งนี้คือปริศนา วันนี้คือของขวัญจากพระเจ้า จึงเรียกว่า 'ปัจจุบัน'"
+      author="บิล คีน"
     />
 
-    <SectionLabel>The Science</SectionLabel>
+    <SectionLabel>วิทยาศาสตร์</SectionLabel>
 
     <Paragraph>
-      Harvard researchers found that people spend 47% of their waking hours thinking about something other than what they are doing. And this mind-wandering consistently made them less happy.
+      นักวิจัยจากฮาร์วาร์ดพบว่าผู้คนใช้เวลา 47% ของชั่วโมงตื่นในการคิดเรื่องอื่นนอกจากสิ่งที่กำลังทำอยู่ และการปล่อยใจลอยนี้ทำให้พวกเขามีความสุขน้อยลงอย่างสม่ำเสมอ
     </Paragraph>
 
     <Paragraph>
-      The antidote is simple but not easy: paying attention on purpose, in the present moment, without judgment. This is the essence of mindfulness.
+      ยาแก้นั้นเรียบง่ายแต่ไม่ง่าย: การใส่ใจอย่างตั้งใจ ในช่วงเวลาปัจจุบัน โดยไม่ตัดสิน นี่คือแก่นของสติ
     </Paragraph>
 
     <Insight
       icon={<Sun size={18} className="text-sage-600" />}
-      title="Clarity"
-      text="When you are present, the mental fog lifts. Details become vivid. Decisions become clearer."
+      title="ความชัดเจน"
+      text="เมื่อคุณอยู่กับปัจจุบัน หมอกในจิตใจจะจางหายไป รายละเอียดชัดเจนขึ้น การตัดสินใจแจ่มใสขึ้น"
     />
     <Insight
       icon={<Heart size={18} className="text-sage-600" />}
-      title="Compassion"
-      text="Presence opens the door to empathy. When you truly listen, you truly connect."
+      title="ความเมตตา"
+      text="การมีสติเปิดประตูสู่ความเห็นอกเห็นใจ เมื่อคุณฟังอย่างแท้จริง คุณจะเชื่อมต่อกันอย่างแท้จริง"
     />
 
-    <SectionLabel>Try It Now</SectionLabel>
+    <SectionLabel>ลองตอนนี้เลย</SectionLabel>
 
     <Paragraph>
-      Pause reading for a moment. Look up from your screen. What do you notice? What sounds are in the background? What does the air feel like on your skin?
+      หยุดอ่านสักครู่ มองขึ้นจากหน้าจอ คุณสังเกตเห็นอะไร? มีเสียงอะไรอยู่รอบตัว? อากาศสัมผัสผิวเป็นอย่างไร?
     </Paragraph>
 
-    <InteractiveBox label="Quick Practice: Check In With Yourself">
+    <InteractiveBox label="แบบฝึกหัด: สำรวจตัวเอง">
       <MoodTracker />
     </InteractiveBox>
 
@@ -207,43 +207,43 @@ const Chapter3 = () => (
   <div>
     <ChapterHeader
       number={3}
-      title="Breathing Life"
-      subtitle="Your built-in calm system"
+      title="ลมหายใจแห่งชีวิต"
+      subtitle="ระบบสงบในตัวคุณ"
       icon={<Wind size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">B</span>reathing is the only bodily function that is both involuntary and voluntary. You breathe without thinking, but you can also choose to breathe consciously. This makes it a powerful bridge between body and mind.
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">ก</span>ารหายใจเป็นการทำงานของร่างกายเพียงอย่างเดียวที่เป็นทั้งอัตโนมัติและตั้งใจ คุณหายใจโดยไม่ต้องคิด แต่ก็สามารถเลือกที่จะหายใจอย่างมีสติ สิ่งนี้ทำให้มันเป็นสะพานเชื่อมระหว่างกายและจิตที่ทรงพลัง
     </Paragraph>
 
     <PullQuote
-      text="Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor."
-      author="Thich Nhat Hanh"
+      text="ความรู้สึกมาและไปเหมือนเมฆในท้องฟ้าที่มีลม การหายใจอย่างมีสติคือสมอของฉัน"
+      author="ติช นัท ฮันห์"
     />
 
-    <SectionLabel>Why It Works</SectionLabel>
+    <SectionLabel>ทำไมมันได้ผล</SectionLabel>
 
     <Paragraph>
-      When you are stressed, your breathing becomes shallow and fast, activating the "fight or flight" response. By deliberately slowing your breath, you activate the vagus nerve and trigger your body's relaxation response.
+      เมื่อคุณเครียด การหายใจจะตื้นและเร็วขึ้น กระตุ้นการตอบสนองแบบ "สู้หรือหนี" การชะลอลมหายใจอย่างตั้งใจจะกระตุ้นเส้นประสาทเวกัสและเริ่มการตอบสนองแบบผ่อนคลายของร่างกาย
     </Paragraph>
 
     <Insight
       icon={<Wind size={18} className="text-sage-600" />}
-      title="Box Breathing"
-      text="Inhale 4 seconds, hold 4 seconds, exhale 4 seconds, hold 4 seconds. Used by Navy SEALs for focus under pressure."
+      title="เทคนิคหายใจแบบกล่อง"
+      text="หายใจเข้า 4 วินาที กลั้น 4 วินาที หายใจออก 4 วินาที กลั้น 4 วินาที ใช้โดยหน่วยซีลของกองทัพเรือสหรัฐฯ เพื่อมีสมาธิภายใต้ความกดดัน"
     />
 
-    <SectionLabel>The Technique</SectionLabel>
+    <SectionLabel>เทคนิค</SectionLabel>
 
     <Paragraph>
-      Find a comfortable position. Place one hand on your chest and one on your belly. The belly hand should rise more than the chest hand. This means you are breathing deeply into your diaphragm.
+      หาท่าที่สบาย วางมือข้างหนึ่งบนหน้าอกและอีกข้างบนท้อง มือที่วางบนท้องควรยกขึ้นมากกว่ามือที่หน้าอก แสดงว่าคุณกำลังหายใจลึกเข้าไปในกระบังลม
     </Paragraph>
 
     <Paragraph>
-      Follow the circle below. Let it guide your rhythm. There is nothing to figure out. Just breathe.
+      ตามวงกลมด้านล่าง ปล่อยให้มันนำจังหวะของคุณ ไม่มีอะไรต้องคิด แค่หายใจ
     </Paragraph>
 
-    <InteractiveBox label="Practice: Follow the Breathing Pacer">
+    <InteractiveBox label="แบบฝึกหัด: ตามจังหวะการหายใจ">
       <div className="flex justify-center -mx-2">
         <div className="transform scale-[0.72] origin-center">
           <BreathingPacer />
@@ -252,7 +252,7 @@ const Chapter3 = () => (
     </InteractiveBox>
 
     <Paragraph className="text-center italic text-stone-400 text-sm">
-      Even two minutes of conscious breathing can shift your entire nervous system state.
+      แม้เพียงสองนาทีของการหายใจอย่างมีสติก็สามารถเปลี่ยนสถานะระบบประสาททั้งหมดของคุณได้
     </Paragraph>
 
     <PageEnd />
@@ -264,48 +264,48 @@ const Chapter4 = () => (
   <div>
     <ChapterHeader
       number={4}
-      title="Feeling the Body"
-      subtitle="Coming home to your physical self"
+      title="สัมผัสร่างกาย"
+      subtitle="กลับมาสู่ตัวตนทางกาย"
       icon={<Heart size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">W</span>e live in our heads. We spend so much time thinking that we forget we have a body at all. Yet the body is a constantly broadcasting station of wisdom, if we learn to tune in.
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">เ</span>ราอาศัยอยู่ในหัว เราใช้เวลาคิดมากจนลืมว่ามีร่างกาย แต่ร่างกายคือสถานีกระจายเสียงที่เต็มไปด้วยปัญญา ถ้าเราเรียนรู้ที่จะรับฟัง
     </Paragraph>
 
     <PullQuote
-      text="The body keeps the score."
-      author="Dr. Bessel van der Kolk"
+      text="ร่างกายเก็บบันทึกทุกอย่าง"
+      author="ดร. เบสเซล แวน เดอร์ โคลค์"
     />
 
-    <SectionLabel>The Body Scan</SectionLabel>
+    <SectionLabel>การสแกนร่างกาย</SectionLabel>
 
     <Paragraph>
-      A body scan is a practice of slowly moving your attention through different parts of your body, from head to toe. You are not trying to change anything. You are simply noticing what is already there.
+      การสแกนร่างกายคือการฝึกเคลื่อนความสนใจผ่านส่วนต่างๆ ของร่างกายอย่างช้าๆ ตั้งแต่หัวจรดเท้า คุณไม่ได้พยายามเปลี่ยนแปลงอะไร แค่สังเกตสิ่งที่มีอยู่แล้ว
     </Paragraph>
 
     <Paragraph>
-      You might discover tension you did not know you were holding. You might feel warmth, tingling, heaviness, or nothing at all. All of these are valid experiences.
+      คุณอาจค้นพบความตึงเครียดที่ไม่รู้ว่ากำลังเก็บไว้ คุณอาจรู้สึกถึงความอบอุ่น เสียวซ่า หนัก หรือไม่รู้สึกอะไรเลย ทั้งหมดนี้ล้วนเป็นประสบการณ์ที่ถูกต้อง
     </Paragraph>
 
     <Insight
       icon={<Heart size={18} className="text-sage-600" />}
-      title="Why Tension Hides"
-      text="Chronic stress causes muscles to contract continuously. Over time, this becomes your 'normal' and you stop noticing it."
+      title="ทำไมความตึงเครียดถึงซ่อนตัว"
+      text="ความเครียดเรื้อรังทำให้กล้ามเนื้อหดตัวอย่างต่อเนื่อง เมื่อเวลาผ่านไป สิ่งนี้กลายเป็น 'ปกติ' ของคุณ และคุณหยุดสังเกตมัน"
     />
 
-    <SectionLabel>Try It Now</SectionLabel>
+    <SectionLabel>ลองตอนนี้เลย</SectionLabel>
 
     <Paragraph>
-      Use the guided body scan below. You can step through each region manually, or turn on auto-guide and simply follow along. Allow eight seconds per region.
+      ใช้การสแกนร่างกายแบบมีผู้นำด้านล่าง คุณสามารถเลื่อนไปทีละส่วนด้วยตัวเอง หรือเปิดโหมดอัตโนมัติแล้วตามไป ให้เวลาแปดวินาทีต่อส่วน
     </Paragraph>
 
-    <InteractiveBox label="Practice: Guided Body Scan">
+    <InteractiveBox label="แบบฝึกหัด: สแกนร่างกายแบบมีผู้นำ">
       <BodyScanGuide />
     </InteractiveBox>
 
     <Paragraph className="text-center italic text-stone-400 text-sm">
-      After completing a full body scan, most people report feeling noticeably calmer within three to five minutes.
+      หลังจากสแกนร่างกายครบทั้งหมด คนส่วนใหญ่รายงานว่ารู้สึกสงบลงอย่างเห็นได้ชัดภายในสามถึงห้านาที
     </Paragraph>
 
     <PageEnd />
@@ -317,44 +317,44 @@ const Chapter5 = () => (
   <div>
     <ChapterHeader
       number={5}
-      title="The Grateful Heart"
-      subtitle="Rewiring your brain for joy"
+      title="หัวใจแห่งความกตัญญู"
+      subtitle="ปรับสายสมองเพื่อความสุข"
       icon={<Sparkles size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">O</span>ur brains are wired with a negativity bias. This was useful when we lived among predators. It is less useful when it causes us to ruminate on a single harsh word for days while ignoring a hundred kind ones.
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">ส</span>มองของเราถูกตั้งค่าให้มีอคติเชิงลบ สิ่งนี้มีประโยชน์เมื่อเราอาศัยอยู่ท่ามกลางสัตว์นักล่า แต่มีประโยชน์น้อยลงเมื่อมันทำให้เราครุ่นคิดถึงคำพูดรุนแรงเพียงคำเดียวนานหลายวัน ในขณะที่มองข้ามคำพูดดีๆ ร้อยคำ
     </Paragraph>
 
     <PullQuote
-      text="The brain is like Velcro for negative experiences and Teflon for positive ones."
-      author="Dr. Rick Hanson"
+      text="สมองเป็นเหมือนตีนตุ๊กแกสำหรับประสบการณ์เชิงลบ และเป็นเหมือนเทฟลอนสำหรับประสบการณ์เชิงบวก"
+      author="ดร. ริค แฮนสัน"
     />
 
-    <SectionLabel>The Gratitude Practice</SectionLabel>
+    <SectionLabel>การฝึกความกตัญญู</SectionLabel>
 
     <Paragraph>
-      Gratitude is not about pretending life is perfect. It is about training your attention to also notice what is going well. Studies show that writing down three things you are grateful for each day can measurably increase happiness in as little as 21 days.
+      ความกตัญญูไม่ใช่การแกล้งทำเป็นว่าชีวิตสมบูรณ์แบบ มันคือการฝึกความสนใจให้สังเกตสิ่งดีๆ ที่เกิดขึ้นด้วย การศึกษาแสดงให้เห็นว่าการจดสิ่งที่รู้สึกขอบคุณสามอย่างทุกวันสามารถเพิ่มความสุขได้อย่างวัดผลได้ภายใน 21 วัน
     </Paragraph>
 
     <Insight
       icon={<Sparkles size={18} className="text-sage-600" />}
-      title="Start Small"
-      text="Notice the tiny joys: warm sunlight, a good cup of tea, someone holding a door open. These moments exist every day."
+      title="เริ่มจากเล็กๆ"
+      text="สังเกตความสุขเล็กๆ น้อยๆ: แสงแดดอุ่นๆ ชาดีๆ สักแก้ว ใครสักคนเปิดประตูให้ ช่วงเวลาเหล่านี้มีอยู่ทุกวัน"
     />
     <Insight
       icon={<Heart size={18} className="text-sage-600" />}
-      title="Feel It"
-      text="Don't just list things. Pause and let the feeling of gratitude land in your chest. This is what creates the neural change."
+      title="สัมผัสมัน"
+      text="อย่าแค่ทำรายการ หยุดและปล่อยให้ความรู้สึกขอบคุณเข้ามาในหัวใจ นี่คือสิ่งที่สร้างการเปลี่ยนแปลงทางระบบประสาท"
     />
 
-    <SectionLabel>Plant Your Seeds</SectionLabel>
+    <SectionLabel>หว่านเมล็ดของคุณ</SectionLabel>
 
     <Paragraph>
-      Use the gratitude garden below. Type something you are thankful for right now, no matter how small. Watch your garden grow.
+      ใช้สวนแห่งความกตัญญูด้านล่าง พิมพ์สิ่งที่คุณรู้สึกขอบคุณตอนนี้ ไม่ว่าจะเล็กน้อยแค่ไหน ดูสวนของคุณเติบโต
     </Paragraph>
 
-    <InteractiveBox label="Practice: Your Gratitude Garden">
+    <InteractiveBox label="แบบฝึกหัด: สวนแห่งความกตัญญู">
       <GratitudeGarden />
     </InteractiveBox>
 
@@ -367,43 +367,43 @@ const Chapter6 = () => (
   <div>
     <ChapterHeader
       number={6}
-      title="The Quiet Mind"
-      subtitle="Thoughts are visitors, not residents"
+      title="จิตใจที่สงบ"
+      subtitle="ความคิดเป็นแขก ไม่ใช่ผู้อยู่อาศัย"
       icon={<Eye size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">Y</span>ou are not your thoughts. This might be the single most important lesson in mindfulness. Thoughts arise on their own, like clouds passing through the sky. You do not have to believe them, argue with them, or follow them.
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">คุ</span>ณไม่ใช่ความคิดของคุณ นี่อาจเป็นบทเรียนที่สำคัญที่สุดในการฝึกสติ ความคิดเกิดขึ้นเอง เหมือนเมฆที่ลอยผ่านท้องฟ้า คุณไม่จำเป็นต้องเชื่อ ไม่ต้องโต้แย้ง หรือตามมันไป
     </Paragraph>
 
     <PullQuote
-      text="You are the sky. Everything else is just the weather."
-      author="Pema Chodron"
+      text="คุณคือท้องฟ้า ทุกสิ่งอื่นเป็นเพียงสภาพอากาศ"
+      author="เพมา โชดรอน"
     />
 
-    <SectionLabel>Working With Thoughts</SectionLabel>
+    <SectionLabel>การทำงานกับความคิด</SectionLabel>
 
     <Paragraph>
-      The goal of mindfulness is not to stop thinking. That would be like trying to stop the ocean from making waves. Instead, we learn to observe our thoughts with kindness, without getting swept away.
+      เป้าหมายของสติไม่ใช่การหยุดคิด นั่นเหมือนพยายามหยุดมหาสมุทรไม่ให้สร้างคลื่น แทนที่จะทำเช่นนั้น เราเรียนรู้ที่จะสังเกตความคิดด้วยความเมตตา โดยไม่ถูกพัดพาไป
     </Paragraph>
 
     <Paragraph>
-      One powerful technique is to replace repetitive negative thoughts with conscious affirmations. Not as denial, but as a deliberate choice to feed a more helpful inner narrative.
+      เทคนิคที่มีพลังอย่างหนึ่งคือการแทนที่ความคิดเชิงลบซ้ำๆ ด้วยคำยืนยันเชิงบวกอย่างมีสติ ไม่ใช่การปฏิเสธ แต่เป็นการเลือกอย่างตั้งใจที่จะป้อนเรื่องเล่าภายในที่เป็นประโยชน์มากกว่า
     </Paragraph>
 
     <Insight
       icon={<Eye size={18} className="text-sage-600" />}
-      title="Name the Pattern"
-      text="When a negative thought appears, try saying: 'I notice I am having the thought that...' This creates distance between you and the thought."
+      title="ตั้งชื่อรูปแบบ"
+      text="เมื่อความคิดเชิงลบปรากฏขึ้น ลองพูดว่า: 'ฉันสังเกตว่าฉันกำลังมีความคิดว่า...' สิ่งนี้สร้างระยะห่างระหว่างคุณกับความคิด"
     />
 
-    <SectionLabel>Choose Your Inner Voice</SectionLabel>
+    <SectionLabel>เลือกเสียงภายในของคุณ</SectionLabel>
 
     <Paragraph>
-      Browse through the affirmation cards below. When one resonates, pause and read it to yourself silently three times, slowly. Let the words land.
+      เลื่อนดูการ์ดยืนยันด้านล่าง เมื่อเจอคำที่โดนใจ หยุดและอ่านให้ตัวเองฟังในใจสามครั้งอย่างช้าๆ ปล่อยให้คำเหล่านั้นซึมเข้ามา
     </Paragraph>
 
-    <InteractiveBox label="Practice: Affirmation Cards">
+    <InteractiveBox label="แบบฝึกหัด: การ์ดคำยืนยัน">
       <AffirmationCards />
     </InteractiveBox>
 
@@ -416,44 +416,44 @@ const Chapter7 = () => (
   <div>
     <ChapterHeader
       number={7}
-      title="Awakening the Senses"
-      subtitle="Grounding yourself in this moment"
+      title="ปลุกประสาทสัมผัส"
+      subtitle="ยึดตัวเองกับช่วงเวลาปัจจุบัน"
       icon={<Eye size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">W</span>hen anxiety spirals you into your head, your senses are the fastest way back to your body and the present moment. This technique is sometimes called "grounding" or "5-4-3-2-1."
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">เ</span>มื่อความวิตกกังวลพัดพาคุณเข้าไปในหัว ประสาทสัมผัสคือทางที่เร็วที่สุดในการกลับสู่ร่างกายและปัจจุบัน เทคนิคนี้บางครั้งเรียกว่า "การกราวด์ดิ้ง" หรือ "5-4-3-2-1"
     </Paragraph>
 
     <PullQuote
-      text="Look at everything always as though you were seeing it either for the first or last time."
-      author="Betty Smith"
+      text="จงมองทุกสิ่งเสมือนเห็นเป็นครั้งแรกหรือครั้งสุดท้าย"
+      author="เบตตี้ สมิธ"
     />
 
-    <SectionLabel>Why Senses Ground Us</SectionLabel>
+    <SectionLabel>ทำไมประสาทสัมผัสถึงช่วยยึดเรา</SectionLabel>
 
     <Paragraph>
-      Your five senses only operate in the present tense. You cannot smell the past or taste the future. When you deliberately activate a sense, you anchor your awareness to right now.
+      ประสาทสัมผัสทั้งห้าทำงานเฉพาะในปัจจุบันเท่านั้น คุณไม่สามารถดมกลิ่นอดีตหรือชิมรสอนาคต เมื่อคุณกระตุ้นประสาทสัมผัสอย่างตั้งใจ คุณยึดการรับรู้ไว้กับตอนนี้
     </Paragraph>
 
     <Insight
       icon={<Eye size={18} className="text-sage-600" />}
-      title="Sight"
-      text="Look at something nearby as if you have never seen it before. Notice the colors, textures, and shadows."
+      title="การมองเห็น"
+      text="มองสิ่งที่อยู่ใกล้ตัวเหมือนไม่เคยเห็นมาก่อน สังเกตสี พื้นผิว และเงา"
     />
     <Insight
       icon={<Wind size={18} className="text-sage-600" />}
-      title="Sound"
-      text="Close your eyes and listen for the most distant sound you can detect. Now the closest one."
+      title="เสียง"
+      text="หลับตาและฟังเสียงที่ไกลที่สุดที่คุณจับได้ แล้วเสียงที่ใกล้ที่สุด"
     />
 
-    <SectionLabel>A One-Minute Reset</SectionLabel>
+    <SectionLabel>รีเซ็ตภายในหนึ่งนาที</SectionLabel>
 
     <Paragraph>
-      The exercise below guides you through all five senses in just 60 seconds. It is a powerful tool for moments of overwhelm, and can be done anywhere, anytime.
+      แบบฝึกหัดด้านล่างจะนำคุณผ่านประสาทสัมผัสทั้งห้าในเวลาเพียง 60 วินาที เป็นเครื่องมือที่ทรงพลังสำหรับช่วงเวลาที่ท่วมท้น และสามารถทำได้ทุกที่ทุกเวลา
     </Paragraph>
 
-    <InteractiveBox label="Practice: The Mindful Minute">
+    <InteractiveBox label="แบบฝึกหัด: หนึ่งนาทีแห่งสติ">
       <MindfulMinute />
     </InteractiveBox>
 
@@ -466,41 +466,41 @@ const Chapter8 = () => (
   <div>
     <ChapterHeader
       number={8}
-      title="Sacred Repetition"
-      subtitle="The practice of mantra and intention"
+      title="การท่องซ้ำอันศักดิ์สิทธิ์"
+      subtitle="การฝึกมนตราและเจตนา"
       icon={<Sparkles size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">F</span>or thousands of years, contemplative traditions around the world have used repetitive chanting as a path to stillness. A mantra gives your restless mind something gentle to hold onto, like a handrail on a stairway.
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">เ</span>ป็นเวลาหลายพันปีที่ประเพณีการเพ่งพินิจทั่วโลกใช้การสวดซ้ำเป็นเส้นทางสู่ความสงบ มนตราให้จิตใจที่กระสับกระส่ายมีสิ่งอ่อนโยนให้ยึดเกาะ เหมือนราวจับบนบันได
     </Paragraph>
 
     <PullQuote
-      text="Mantra is a sound vibration through which we mindfully focus our thoughts, our feelings, and our highest intention."
-      author="Girish"
+      text="มนตราคือการสั่นสะเทือนของเสียงที่ผ่านมัน เราตั้งใจโฟกัสความคิด ความรู้สึก และเจตนาสูงสุดของเรา"
+      author="คีริช"
     />
 
-    <SectionLabel>How Mantras Work</SectionLabel>
+    <SectionLabel>มนตราทำงานอย่างไร</SectionLabel>
 
     <Paragraph>
-      When you repeat a phrase with focus, it occupies the part of your brain that would otherwise be generating anxious chatter. Over time, the repetition creates a groove of calm that you can return to more and more easily.
+      เมื่อคุณท่องวลีด้วยสมาธิ มันจะครอบครองส่วนของสมองที่มิฉะนั้นจะสร้างความกังวลวุ่นวาย เมื่อเวลาผ่านไป การท่องซ้ำสร้างร่องของความสงบที่คุณสามารถกลับมาได้ง่ายขึ้นเรื่อยๆ
     </Paragraph>
 
     <Paragraph>
-      Traditionally, mantras are counted on a mala — a string of 108 beads. Each bead marks one repetition. Below is a digital mala for your practice.
+      ตามประเพณี มนตราจะนับบนลูกประคำมาลา ซึ่งเป็นสายลูกประคำ 108 เม็ด แต่ละเม็ดหมายถึงหนึ่งการท่อง ด้านล่างคือมาลาดิจิทัลสำหรับการฝึกของคุณ
     </Paragraph>
 
-    <InteractiveBox label="Practice: Mantra Counter">
+    <InteractiveBox label="แบบฝึกหัด: ตัวนับมนตรา">
       <MantraCounter />
     </InteractiveBox>
 
-    <SectionLabel>Ambient Focus</SectionLabel>
+    <SectionLabel>เสียงบรรยากาศเพื่อสมาธิ</SectionLabel>
 
     <Paragraph>
-      Many practitioners find it helpful to pair their mantra with ambient sound. Select a soundscape below to create your ideal space for inner focus.
+      ผู้ฝึกหลายคนพบว่าการจับคู่มนตรากับเสียงบรรยากาศช่วยได้ เลือกเสียงด้านล่างเพื่อสร้างพื้นที่ในอุดมคติสำหรับการโฟกัสภายใน
     </Paragraph>
 
-    <InteractiveBox label="Practice: Ambient Soundscapes">
+    <InteractiveBox label="แบบฝึกหัด: เสียงบรรยากาศ">
       <SoundScapeSelector />
     </InteractiveBox>
 
@@ -513,39 +513,39 @@ const Chapter9 = () => (
   <div>
     <ChapterHeader
       number={9}
-      title="The Evening Ritual"
-      subtitle="Preparing the mind for rest"
+      title="พิธีกรรมยามเย็น"
+      subtitle="เตรียมจิตใจเพื่อการพักผ่อน"
       icon={<Moon size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">S</span>leep is not merely the absence of wakefulness. It is an active process of repair, consolidation, and renewal. And just as we prepare the body for exercise with a warm-up, we can prepare the mind for sleep with a wind-down.
+      <span className="text-3xl float-left mr-3 mt-1 font-serif text-sage-600 leading-[0.9]">ก</span>ารนอนหลับไม่ใช่เพียงแค่การหยุดตื่น แต่เป็นกระบวนการซ่อมแซม จัดระเบียบ และฟื้นฟูอย่างกระตือรือร้น เช่นเดียวกับที่เราเตรียมร่างกายก่อนออกกำลังกายด้วยการวอร์มอัพ เราสามารถเตรียมจิตใจก่อนนอนด้วยการคลายตัว
     </Paragraph>
 
     <PullQuote
-      text="Sleep is the best meditation."
-      author="Dalai Lama"
+      text="การนอนหลับคือการทำสมาธิที่ดีที่สุด"
+      author="ดาไลลามะ"
     />
 
-    <SectionLabel>Why We Struggle to Sleep</SectionLabel>
+    <SectionLabel>ทำไมเราถึงนอนไม่หลับ</SectionLabel>
 
     <Paragraph>
-      Most sleep difficulties are not physical but mental. The body is tired, but the mind is still running. A wind-down ritual signals to your nervous system that the day is complete, and it is safe to let go.
+      ปัญหาการนอนหลับส่วนใหญ่ไม่ใช่ทางกายแต่ทางจิต ร่างกายเหนื่อย แต่จิตใจยังทำงานอยู่ พิธีกรรมก่อนนอนเป็นสัญญาณให้ระบบประสาทของคุณรู้ว่าวันจบลงแล้ว และปลอดภัยที่จะปล่อยวาง
     </Paragraph>
 
     <Insight
       icon={<Moon size={18} className="text-sage-600" />}
-      title="The 4-7-8 Method"
-      text="Inhale for 4 counts, hold for 7, exhale for 8. This activates the parasympathetic nervous system and slows the heart rate."
+      title="เทคนิค 4-7-8"
+      text="หายใจเข้า 4 จังหวะ กลั้น 7 จังหวะ หายใจออก 8 จังหวะ วิธีนี้กระตุ้นระบบประสาทพาราซิมพาเทติกและชะลอการเต้นของหัวใจ"
     />
 
-    <SectionLabel>Your Wind-Down Checklist</SectionLabel>
+    <SectionLabel>รายการคลายตัวก่อนนอน</SectionLabel>
 
     <Paragraph>
-      Follow the five-step wind-down below. Complete each step before moving to the next. By the end, you will have given your mind permission to rest.
+      ทำตามขั้นตอนคลายตัวห้าขั้นด้านล่าง ทำให้ครบแต่ละขั้นก่อนไปขั้นต่อไป เมื่อจบแล้ว คุณจะได้ให้อนุญาตจิตใจพักผ่อน
     </Paragraph>
 
-    <InteractiveBox label="Practice: Sleep Wind-Down">
+    <InteractiveBox label="แบบฝึกหัด: คลายตัวก่อนนอน">
       <SleepWindDown />
     </InteractiveBox>
 
@@ -558,43 +558,43 @@ const Chapter10 = () => (
   <div>
     <ChapterHeader
       number={10}
-      title="Your Toolkit"
-      subtitle="All practices in one place"
+      title="ชุดเครื่องมือของคุณ"
+      subtitle="แบบฝึกหัดทั้งหมดในที่เดียว"
       icon={<Leaf size={24} className="text-sage-600" />}
     />
 
     <Paragraph>
-      You have arrived at the end of this book, but the beginning of your practice. Below, you will find every tool from this ebook gathered in one place. Return here whenever you need a moment of calm.
+      คุณมาถึงจุดสิ้นสุดของหนังสือเล่มนี้ แต่เป็นจุดเริ่มต้นของการฝึกฝน ด้านล่างคุณจะพบเครื่องมือทั้งหมดจากอีบุ๊กนี้รวมไว้ในที่เดียว กลับมาที่นี่ได้ทุกเมื่อที่ต้องการช่วงเวลาแห่งความสงบ
     </Paragraph>
 
     <PullQuote
-      text="We are what we repeatedly do. Excellence, then, is not an act, but a habit."
-      author="Aristotle"
+      text="เราเป็นสิ่งที่เราทำซ้ำๆ ความเป็นเลิศจึงไม่ใช่การกระทำ แต่เป็นนิสัย"
+      author="อริสโตเติล"
     />
 
-    <SectionLabel>Your Daily Practice</SectionLabel>
+    <SectionLabel>การฝึกประจำวัน</SectionLabel>
 
     <Paragraph>
-      You do not need to do everything. Even five minutes a day creates change. Here is a suggested daily micro-routine:
+      คุณไม่จำเป็นต้องทำทุกอย่าง แม้เพียงวันละห้านาทีก็สร้างการเปลี่ยนแปลง นี่คือกิจวัตรย่อยที่แนะนำ:
     </Paragraph>
 
     <Insight
       icon={<Sun size={18} className="text-sage-600" />}
-      title="Morning (2 min)"
-      text="Set an intention for the day. Take three deep breaths."
+      title="เช้า (2 นาที)"
+      text="ตั้งความตั้งใจสำหรับวัน หายใจลึกสามครั้ง"
     />
     <Insight
       icon={<Eye size={18} className="text-sage-600" />}
-      title="Midday (1 min)"
-      text="Do a mindful minute. Check in with your mood."
+      title="กลางวัน (1 นาที)"
+      text="ทำหนึ่งนาทีแห่งสติ สำรวจอารมณ์ของคุณ"
     />
     <Insight
       icon={<Moon size={18} className="text-sage-600" />}
-      title="Evening (2 min)"
-      text="Write three gratitudes. Follow the sleep wind-down."
+      title="เย็น (2 นาที)"
+      text="เขียนสิ่งที่ขอบคุณสามอย่าง ทำตามขั้นตอนคลายตัวก่อนนอน"
     />
 
-    <SectionLabel>All Your Zen Tools</SectionLabel>
+    <SectionLabel>เครื่องมือเซนทั้งหมดของคุณ</SectionLabel>
 
     <div className="my-6 -mx-1">
       <ZenToolsGrid />
@@ -604,13 +604,13 @@ const Chapter10 = () => (
       <div className="w-16 h-16 bg-sage-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
         <Leaf size={24} className="text-white" />
       </div>
-      <p className="font-serif text-xl text-stone-800 italic mb-2">Namaste</p>
+      <p className="font-serif text-xl text-stone-800 italic mb-2">นมัสเต</p>
       <p className="text-sm text-stone-400">
-        The light in me honors the light in you.
+        แสงสว่างในตัวฉันเคารพแสงสว่างในตัวคุณ
       </p>
       <div className="w-8 h-[2px] bg-sage-200 mx-auto mt-6" />
       <p className="mt-4 text-[10px] text-stone-300 uppercase tracking-[0.2em]">
-        Breathe in, breathe out.
+        หายใจเข้า หายใจออก
       </p>
     </div>
   </div>
@@ -621,71 +621,71 @@ export const CHAPTERS: Chapter[] = [
   {
     id: 'welcome',
     number: 1,
-    title: 'The Path to Mindful Living',
-    subtitle: 'An interactive guide',
+    title: 'เส้นทางสู่การใช้ชีวิตอย่างมีสติ',
+    subtitle: 'คู่มือเชิงโต้ตอบ',
     content: <Chapter1 />,
   },
   {
     id: 'present',
     number: 2,
-    title: 'Being Here',
-    subtitle: 'The present moment',
+    title: 'อยู่กับปัจจุบัน',
+    subtitle: 'ช่วงเวลาปัจจุบัน',
     content: <Chapter2 />,
   },
   {
     id: 'breath',
     number: 3,
-    title: 'Breathing Life',
-    subtitle: 'Your built-in calm system',
+    title: 'ลมหายใจแห่งชีวิต',
+    subtitle: 'ระบบสงบในตัวคุณ',
     content: <Chapter3 />,
   },
   {
     id: 'body',
     number: 4,
-    title: 'Feeling the Body',
-    subtitle: 'Body awareness',
+    title: 'สัมผัสร่างกาย',
+    subtitle: 'การตระหนักรู้ทางกาย',
     content: <Chapter4 />,
   },
   {
     id: 'gratitude',
     number: 5,
-    title: 'The Grateful Heart',
-    subtitle: 'Rewiring for joy',
+    title: 'หัวใจแห่งความกตัญญู',
+    subtitle: 'ปรับสายสมองเพื่อความสุข',
     content: <Chapter5 />,
   },
   {
     id: 'mind',
     number: 6,
-    title: 'The Quiet Mind',
-    subtitle: 'Working with thoughts',
+    title: 'จิตใจที่สงบ',
+    subtitle: 'การทำงานกับความคิด',
     content: <Chapter6 />,
   },
   {
     id: 'senses',
     number: 7,
-    title: 'Awakening the Senses',
-    subtitle: 'Grounding yourself',
+    title: 'ปลุกประสาทสัมผัส',
+    subtitle: 'ยึดตัวเองกับปัจจุบัน',
     content: <Chapter7 />,
   },
   {
     id: 'mantra',
     number: 8,
-    title: 'Sacred Repetition',
-    subtitle: 'Mantra and intention',
+    title: 'การท่องซ้ำอันศักดิ์สิทธิ์',
+    subtitle: 'มนตราและเจตนา',
     content: <Chapter8 />,
   },
   {
     id: 'evening',
     number: 9,
-    title: 'The Evening Ritual',
-    subtitle: 'Preparing for rest',
+    title: 'พิธีกรรมยามเย็น',
+    subtitle: 'เตรียมตัวพักผ่อน',
     content: <Chapter9 />,
   },
   {
     id: 'toolkit',
     number: 10,
-    title: 'Your Toolkit',
-    subtitle: 'All practices in one place',
+    title: 'ชุดเครื่องมือของคุณ',
+    subtitle: 'แบบฝึกหัดทั้งหมดในที่เดียว',
     content: <Chapter10 />,
   },
 ];

@@ -51,14 +51,14 @@ const TOCDrawer: React.FC<{
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center gap-2">
                   <BookOpen size={18} className="text-sage-600" />
-                  <span className="font-serif text-lg text-stone-900">Contents</span>
+                  <span className="font-serif text-lg text-stone-900">สารบัญ</span>
                 </div>
                 <button onClick={onClose} className="p-2 -mr-2 rounded-full hover:bg-sage-50 text-stone-400">
                   <X size={18} />
                 </button>
               </div>
               <p className="text-[10px] uppercase tracking-[0.3em] text-sage-500 font-bold">
-                {chapters.length} Chapters
+                {chapters.length} บท
               </p>
             </div>
 
@@ -137,7 +137,7 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
     const chapter = chapters[page];
     if (!chapter) return;
     const contentText = contentRef.current?.innerText?.trim() ?? '';
-    const header = `Chapter ${chapter.number}: ${chapter.title}\n${chapter.subtitle}\n\n`;
+    const header = `บทที่ ${chapter.number}: ${chapter.title}\n${chapter.subtitle}\n\n`;
     const ebookText = `${header}${contentText}`;
     const blob = new Blob([ebookText], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -208,7 +208,7 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
 
           <div className="text-center flex-1 min-w-0 px-2">
             <p className="text-[10px] uppercase tracking-[0.25em] text-sage-500 font-bold truncate">
-              Chapter {currentChapter.number}
+              บทที่ {currentChapter.number}
             </p>
           </div>
 
@@ -216,7 +216,7 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
             <button
               onClick={downloadChapter}
               className="p-2 rounded-full hover:bg-sage-50 text-stone-500 active:bg-sage-100 transition-colors"
-              aria-label="Download current chapter"
+              aria-label="ดาวน์โหลดบทปัจจุบัน"
             >
               <Download size={18} />
             </button>
@@ -265,7 +265,7 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
             className="flex items-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-medium transition-all active:scale-95 disabled:opacity-30 text-stone-500 hover:bg-sage-50"
           >
             <ChevronLeft size={18} />
-            <span className="hidden min-[360px]:inline">Back</span>
+            <span className="hidden min-[360px]:inline">ย้อนกลับ</span>
           </button>
 
           <div className="flex items-center gap-1">
@@ -293,7 +293,7 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
                 : 'text-stone-500'
             }`}
           >
-            <span className="hidden min-[360px]:inline">Next</span>
+            <span className="hidden min-[360px]:inline">ถัดไป</span>
             <ChevronRight size={18} />
           </button>
         </div>
