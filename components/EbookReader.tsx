@@ -19,6 +19,7 @@ export interface Chapter {
 
 interface EbookReaderProps {
   chapters: Chapter[];
+  onAdminOpen?: () => void;
 }
 
 // ─── TABLE OF CONTENTS DRAWER ─────────────────────────────────────
@@ -112,7 +113,7 @@ const ProgressBar: React.FC<{ current: number; total: number }> = ({ current, to
 // ─── MAIN EBOOK READER ───────────────────────────────────────────
 const SWIPE_THRESHOLD = 50;
 
-export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
+export const EbookReader: React.FC<EbookReaderProps> = ({ chapters, onAdminOpen }) => {
   const [page, setPage] = useState(0);
   const [tocOpen, setTocOpen] = useState(false);
   const [direction, setDirection] = useState(0);
@@ -220,9 +221,13 @@ export const EbookReader: React.FC<EbookReaderProps> = ({ chapters }) => {
             >
               <Download size={18} />
             </button>
-            <div className="w-6 h-6 bg-sage-600 rounded-full flex items-center justify-center">
+            <button
+              onClick={onAdminOpen}
+              className="w-6 h-6 bg-sage-600 rounded-full flex items-center justify-center active:scale-90 transition-transform"
+              aria-label="เปิดแผงควบคุม"
+            >
               <Leaf size={12} className="text-white" />
-            </div>
+            </button>
           </div>
         </div>
       </header>
